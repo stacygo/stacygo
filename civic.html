@@ -68,11 +68,9 @@ var config = {
             cookies: ['fr'],
             onAccept : function(){
               dataLayer.push({ 'event': 'consent_ad_accept' });
-              });
             },
             onRevoke: function() {
               dataLayer.push({ 'event': 'consent_ad_revoke' });
-              });
             }
         },
     ],
