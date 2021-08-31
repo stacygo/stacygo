@@ -35,6 +35,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.5.min.js"></script>
 
 <script>
+window.dataLayer = window.dataLayer || [];
 var config = {
   apiKey: 'df5d1d277c49be1e13fa2755d66ee417477421f2',
   product: 'COMMUNITY',
@@ -54,14 +55,10 @@ var config = {
               description: "Google Analytics"
             }],
             onAccept : function(){
-              gtag('consent', 'update', {
-                analytics_storage: 'granted'
-              });
+              dataLayer.push({ 'event': 'consent_analytics_accept' });
             },
             onRevoke: function(){
-              gtag('consent', 'update', {
-                analytics_storage: 'denied'
-              });
+              dataLayer.push({ 'event': 'consent_analytics_revoke' });
             }
         },
         {
@@ -70,13 +67,11 @@ var config = {
             description: 'We use marketing cookies to help us improve the relevancy of advertising campaigns you receive.',
             cookies: ['fr'],
             onAccept : function(){
-              gtag('consent', 'update', {
-                ad_storage: 'granted'
+              dataLayer.push({ 'event': 'consent_ad_accept' });
               });
             },
             onRevoke: function() {
-              gtag('consent', 'update', {
-                ad_storage: 'denied'
+              dataLayer.push({ 'event': 'consent_ad_revoke' });
               });
             }
         },
