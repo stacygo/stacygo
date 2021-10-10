@@ -24,12 +24,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">The quick brown fox still jumps over the lazy dog.</p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Click me</button>
-      <!-- Calendly badge widget begin -->
+      <!-- Calendly link widget begin -->
       <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
       <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-      <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/stacygo', text: 'Schedule time with me', color: '#ffc107', textColor: '#ffffff', branding: true }); }</script>
-      <!-- Calendly badge widget end -->
+      <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/stacygo'});return false;">Click me</button>
+      <!-- Calendly link widget end -->
+      
+      <script>
+        function initFreshChat() {
+          window.fcWidget.init({
+            token: "73032ff9-8e22-407b-8d6c-87ed885db33d",
+            host: "https://wchat.eu.freshchat.com"
+          });
+        }
+        function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.eu.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk Messaging-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+      </script>
     </div>
   </div>
 </div>
